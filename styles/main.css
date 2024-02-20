@@ -1,0 +1,89 @@
+/* Общие стили */
+body, p {
+    margin: 0;
+}
+
+p {
+    color: #1B1B1C;
+    font-family: "Montserrat";
+    font-weight: 650;
+}
+
+/* Отрисовка блоков(статичных) */
+.progress {
+    width: 108px;
+    height: 108px;
+    border-radius: 100%;
+    border: 10px solid #EAF3F6;
+}
+
+.valueInput, .toggleAnimate, .toggleHide {
+    width: 44px;
+    height: 26px;
+    border-radius: 20px;
+    padding: 3px;
+}
+
+.switcher {
+    width: 26px;
+    background-color: white;
+    height: 100%;
+    border-radius: 36px;
+}
+
+.valueInput {
+    border: 1px solid #020202;
+    color: #020202;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Montserrat";
+    font-weight: 600;
+}
+
+.toggleAnimate, .toggleHide {
+    background-color: #EAF3F6;
+    position: relative;
+    display: flex;
+    transition: 0.1s ease-in-out;
+}
+
+.activeAnimate {
+    background-color: #005CFF;
+}
+
+
+/* Позицианирование */
+.mainBlock {
+    height: 100svh;
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    justify-content: center;
+}
+
+.progressTitle {
+    position: absolute;
+    left: 24px;
+    top: 24px;
+}
+
+.progressControll {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.progressControllRow {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Медиа-запросы(адаптация) */
+@media (max-width: 567px) {
+    .mainBlock {
+        flex-direction: column;
+        gap: 80px;
+    }
+}
