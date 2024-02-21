@@ -9,12 +9,28 @@ p {
     font-weight: 650;
 }
 
-/* Отрисовка блоков(статичных) */
+.progressBlock {
+    width: 128px; /* Увеличил немного, чтобы учитывать границу */
+    height: 128px; /* Увеличил немного, чтобы учитывать границу */
+    position: relative;
+}
+
 .progress {
-    width: 108px;
-    height: 108px;
-    border-radius: 100%;
-    border: 10px solid #EAF3F6;
+    transform: rotate(-90deg);
+}
+
+.progressCircle {
+    transition: stroke-dashoffset 0.5s;
+}
+
+.progressFill {
+    stroke-dasharray: 365;
+    stroke-dashoffset: calc((100 - var(--progress-value, 0)) * 3.64);
+    transition: 0.5s;
+}
+
+.progressFillHide {
+    display: none;
 }
 
 .valueInput, .toggleAnimate, .toggleHide {
@@ -24,32 +40,44 @@ p {
     padding: 3px;
 }
 
-.switcher {
-    width: 26px;
-    background-color: white;
-    height: 100%;
-    border-radius: 36px;
-}
-
 .valueInput {
     border: 1px solid #020202;
     color: #020202;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
     font-family: "Montserrat";
     font-weight: 600;
+    transition: 0.2s ease-in-out;
+
+    &:active, &:hover, &:focus {
+        outline: 0;
+        outline-offset: 0;
+        border: 1px solid #005CFF;
+    }
 }
 
 .toggleAnimate, .toggleHide {
     background-color: #EAF3F6;
     position: relative;
     display: flex;
-    transition: 0.1s ease-in-out;
+    transition: 0.2s ease-in-out;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 2px;
+        width: 26px;
+        background-color: white;
+        height: inherit;
+        border-radius: 36px;
+        transition: left 0.1s ease-in-out; /* Анимация изменения положения */
+    }
 }
 
 .activeAnimate {
     background-color: #005CFF;
+    &::before {
+        left: calc(100% - 28px);
+    }
 }
 
 

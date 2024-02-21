@@ -14,25 +14,26 @@
 
     <body>
         <div class="mainBlock">
+            <p class="progressTitle">Progress</p>
             <div class="progressBlock">
-                <p class="progressTitle">Progress</p>
-                <div class="progress"></div>
-            </div>
+                <svg class="progress" width="128" height="128">
+                    <circle class="progressCircle" cx="64" cy="64" r="58" fill="none" stroke="#EAF3F6" stroke-width="12"></circle>
+                    <circle class="progressFill" cx="64" cy="64" r="58" fill="none" stroke="#005CFF" stroke-width="12" stroke-dasharray="365" stroke-dashoffset="365"></circle>
+                </svg>
+            </div>                      
             <div class="progressControll">
                 <div class="progressControllRow">
-                    <div class="valueInput">0</div>
+                    <input class="valueInput" value="25" type="number" min="0" max="100">
                     <p class="progressControllTitle">Value</p>
                 </div>
                 <div class="progressControllRow">
-                    <div class="toggleAnimate">
-                        <div class="switcher"></div>
-                    </div>
+                    <span class="toggleAnimate">
+                    </span>
                     <p class="progressControllTitle">Animate</p>
                 </div>
                 <div class="progressControllRow">
-                    <div class="toggleHide">
-                        <div class="switcher"></div>
-                    </div>
+                    <span class="toggleHide">
+                    </span>
                     <p class="progressControllTitle">Hide</p>
                 </div>
             </div>
