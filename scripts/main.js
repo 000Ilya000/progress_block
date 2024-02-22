@@ -58,7 +58,7 @@ toggleAnimate.addEventListener('click', () => {
 toggleHide.addEventListener('click', () => {
     toggleHideActive = !toggleHideActive;
     toggleHide.classList.toggle('activeHide', toggleHideActive);
-    progressComplite.classList.toggle('progressFillHide', toggleHideActive);
+    progress.classList.toggle('progressFillHide', toggleHideActive);
     console.log(`hide - ${toggleHideActive}`);
 });
 

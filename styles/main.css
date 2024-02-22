@@ -25,6 +25,8 @@ p {
 
 .progress {
     transform: rotate(-90deg);
+    opacity: 1;
+    transition: 0.4s;
 }
 
 .progressCircle {
@@ -39,7 +41,7 @@ p {
 
 /* Состояние hide */
 .progressFillHide {
-    display: none;
+    opacity: 0;
 }
 
 /* Общие стили для контроллеров */
