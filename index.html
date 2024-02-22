@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Progress block</title>
+        <!-- Добавление фавиконки-->
+        <link type="image/x-icon" href="./imgs/icon.ico" rel="shortcut icon">
+        <!-- Подключение стилей-->
         <link rel="stylesheet" href="./styles/main.css">
+        <!-- Подключений шрифтов-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
@@ -15,12 +18,14 @@
     <body>
         <div class="mainBlock">
             <p class="progressTitle">Progress</p>
+            <!-- Блок progress(круг)-->
             <div class="progressBlock">
                 <svg class="progress" width="128" height="128">
                     <circle class="progressCircle" cx="64" cy="64" r="58" fill="none" stroke="#EAF3F6" stroke-width="12"></circle>
                     <circle class="progressFill" cx="64" cy="64" r="58" fill="none" stroke="#005CFF" stroke-width="12" stroke-dasharray="365" stroke-dashoffset="365"></circle>
                 </svg>
-            </div>                      
+            </div>
+            <!-- Блок API(контроллеров)-->
             <div class="progressControll">
                 <div class="progressControllRow">
                     <input class="valueInput" value="25" type="number" min="0" max="100">
@@ -38,7 +43,7 @@
                 </div>
             </div>
         </div>
+        <!-- Подключение скриптов -->
         <script src="./scripts/main.js"></script>
     </body>
-
 </html>

@@ -9,9 +9,17 @@ p {
     font-weight: 650;
 }
 
+.mainBlock {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    justify-content: center;
+}
+
 .progressBlock {
-    width: 128px; /* Увеличил немного, чтобы учитывать границу */
-    height: 128px; /* Увеличил немного, чтобы учитывать границу */
+    width: 128px;
+    height: 128px;
     position: relative;
 }
 
@@ -20,52 +28,57 @@ p {
 }
 
 .progressCircle {
-    transition: stroke-dashoffset 0.5s;
+    transition: stroke-dashoffset 0.4s;
 }
 
 .progressFill {
     stroke-dasharray: 365;
     stroke-dashoffset: calc((100 - var(--progress-value, 0)) * 3.64);
-    transition: 0.5s;
+    transition: 0.4s;
 }
 
+/* Состояние hide */
 .progressFillHide {
     display: none;
 }
 
+/* Общие стили для контроллеров */
 .valueInput, .toggleAnimate, .toggleHide {
     width: 44px;
     height: 26px;
     border-radius: 20px;
     padding: 3px;
+    font-family: "Montserrat";
+    font-weight: 600;
+    transition: border-color 0.2s ease-in-out;
 }
 
 .valueInput {
     border: 1px solid #020202;
     color: #020202;
-    display: flex;
     text-align: center;
-    font-family: "Montserrat";
-    font-weight: 600;
-    transition: 0.2s ease-in-out;
 
     &:active, &:hover, &:focus {
         outline: 0;
-        outline-offset: 0;
-        border: 1px solid #005CFF;
+        border-color: #005CFF;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
     }
 }
 
 .toggleAnimate, .toggleHide {
     background-color: #EAF3F6;
     position: relative;
-    display: flex;
-    transition: 0.2s ease-in-out;
+    cursor: pointer;
+
     &::before {
         content: '';
         position: absolute;
         left: 2px;
-        width: 26px;
+        width: 25px;
         background-color: white;
         height: inherit;
         border-radius: 36px;
@@ -73,21 +86,12 @@ p {
     }
 }
 
-.activeAnimate {
+/* Стили для тоглов в состоянии active */
+.activeAnimate, .activeHide {
     background-color: #005CFF;
     &::before {
         left: calc(100% - 28px);
     }
-}
-
-
-/* Позицианирование */
-.mainBlock {
-    height: 100svh;
-    display: flex;
-    align-items: center;
-    gap: 100px;
-    justify-content: center;
 }
 
 .progressTitle {
